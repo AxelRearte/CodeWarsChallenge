@@ -17,19 +17,12 @@ namespace CodeWars
             array[2] = 45;
 
             int[] arreglo = new int[9] {1,2,3,4,5,6,7,8,9};
-            
+
+            //Testeando github;
 
             string Nombre = "oxx";
 
-            string palabra = "El Avion";
-
-            int a = 10;
-
-            DesafioCodeWarsSix(a);
-
-            int s;
-          
-
+            DuplicateEncode(Nombre);
             //Console.WriteLine(b);
             //Console.WriteLine(lenght);
 
@@ -150,18 +143,19 @@ namespace CodeWars
             return t;
         }
 
-        public static int[] DesafioCodeWarsSix(int a)
+        public static int[] DesafioCodeWarsSix(int n)
         {
             List<int> add_list = new List<int>();
 
            
-                for (int i = 2; i <= a - 1 ; i++)
+                for (int i = 2; i <= n - 1 ; i++)
                 {
-                    if (a % i == 0)
+                    if (n % i == 0)
                     {
                         add_list.Add(i);
+                    }
                 }
-                }
+
             if (add_list.ToArray().Length < 1)
             {
                 return null;
@@ -172,6 +166,37 @@ namespace CodeWars
                 return add_list.ToArray();
             }
         }
+
+        public static string DuplicateEncode(string word)
+        {
+            string caracteres = ""; 
+            int contador = 0;
+            string palabraMinuscula = word.ToLower();string b = "";
+
+            for (int i = 0; i < palabraMinuscula.Length; i++)
+            {
+                for (int w = 0; w < palabraMinuscula.Length; w++)
+                {
+                    if (palabraMinuscula[i] == palabraMinuscula[w])
+                    {
+                        contador = contador + 1;
+                        if (contador > 1)
+                        {
+                            caracteres += ")";
+                            break;
+                        }
+                    }
+                }
+                if (contador < 2)
+                {
+                    caracteres += "(";
+                }
+                contador = 0;
+            }
+
+            return caracteres;
+        }
+
 
     }
 }
