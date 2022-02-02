@@ -22,7 +22,7 @@ namespace CodeWars
 
             string Nombre = "oxx";
 
-            DuplicateEncode(Nombre);
+            DesafioCodeWarsSeven(Nombre);
             //Console.WriteLine(b);
             //Console.WriteLine(lenght);
 
@@ -84,7 +84,7 @@ namespace CodeWars
              return numero;
         }
 
-        public static int DesafioCodeWardsThree(int num)
+        public static int DesafioCodeWarsThree(int num)
         {
             int otro = 0;
             int b = 0;
@@ -102,7 +102,7 @@ namespace CodeWars
             return b;
         }
 
-        public static string DesafioCodeWardsFour(string palabra)
+        public static string DesafioCodeWarsFour(string palabra)
         {
             int lenght = palabra.Length;
 
@@ -113,7 +113,7 @@ namespace CodeWars
             return b;
         }
 
-        public static bool DesafioCodeWardsFive(string input)
+        public static bool DesafioCodeWarsFive(string input)
         {
             bool t = false;
 
@@ -167,7 +167,7 @@ namespace CodeWars
             }
         }
 
-        public static string DuplicateEncode(string word)
+        public static string DesafioCodeWarsSeven(string word)
         {
             string caracteres = ""; 
             int contador = 0;
