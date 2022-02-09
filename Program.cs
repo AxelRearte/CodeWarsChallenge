@@ -16,20 +16,19 @@ namespace CodeWars
             array[1] = 35;
             array[2] = 45;
 
-            int[] arreglo = new int[9] {1,2,3,4,5,6,7,8,9};
+            int[] seq = new int[3] {1,1,2};
 
-            //Testeando github;
 
+            DesafioCodeWarsEight(seq);
+
+           
             string Nombre = "oxx";
+          
 
-            DesafioCodeWarsSeven(Nombre);
-            //Console.WriteLine(b);
-            //Console.WriteLine(lenght);
 
             Console.ReadKey();
 
         }
-
         public static int Valores(int[] numeros)
         {
             int min = numeros.Min();
@@ -43,21 +42,21 @@ namespace CodeWars
             return numero;
         }
 
-        public static int DesafioCodeWars(int[] arreglo)
+        public static int DesafioCodeWars(int[] seq)
         {
             int MasChico = int.MaxValue;
             int SegundoMasChico = int.MaxValue;
 
-            for (int i = 0; i < arreglo.Length; i++)
+            for (int i = 0; i < seq.Length; i++)
             {
-                if (MasChico > arreglo[i])
+                if (MasChico > seq[i])
                 {
                     SegundoMasChico = MasChico;
-                    MasChico = arreglo[i];
+                    MasChico = seq[i];
                 }
-                else if (SegundoMasChico > arreglo[i])
+                else if (SegundoMasChico > seq[i])
                 {
-                    SegundoMasChico = arreglo[i];
+                    SegundoMasChico = seq[i];
                 }
             }
 
@@ -197,6 +196,38 @@ namespace CodeWars
             return caracteres;
         }
 
+        public static int DesafioCodeWarsEight(int[] seq)
+        {
+            int n = 0;
+            int acumulador = 0;
+            int retorno = 0;
+            for (int i = 0; i < seq.Length; i++)
+            {
 
+                n = seq[i];
+                acumulador = 0;
+                Console.WriteLine($"En la posicion {i} del numero {seq[i]}");
+
+                for (int z = 0; z < seq.Length; z++)
+                {
+                    if (n == seq[z])
+                    {
+                        acumulador = acumulador + 1;
+                        Console.WriteLine($"El acumulador es {acumulador}");
+                    }
+
+
+                }
+                if (acumulador % 2 != 0)
+                {
+                    Console.WriteLine($"Es impar el numero {seq[i]}");
+                    retorno = seq[i];
+                }
+
+            }
+
+            return retorno;
+        }
+        
     }
 }
